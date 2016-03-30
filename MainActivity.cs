@@ -24,19 +24,17 @@ namespace iAppAndroid
             SetContentView(Resource.Layout.Main);
 
             var buttonMyTasks = FindViewById<Button>(Resource.Id.myTasks);
-            //var buttonAllTasks = FindViewById<Button>(Resource.Id.allTasks);
-            //var buttonDoneTasks = FindViewById<Button>(Resource.Id.archive);
             var buttonMap = FindViewById<Button>(Resource.Id.tablesMap);
             numberOfTasks = FindViewById<TextView>(Resource.Id.numberOfTasks);
 
             buttonMyTasks.TextSize *= Resources.DisplayMetrics.Density/5;
-           // buttonAllTasks.TextSize *= Resources.DisplayMetrics.Density / 5;
             buttonMap.TextSize *= Resources.DisplayMetrics.Density / 5;
-            //buttonDoneTasks.TextSize *= Resources.DisplayMetrics.Density / 5;
-
+            
             AddHandler(buttonMyTasks, "my");
-            //AddHandler(buttonAllTasks, "all");
-            //AddHandler(buttonDoneTasks, "done");
+            buttonMap.Click += (o, e) => {
+                var intent = new Intent(this, typeof(MapActivity));
+                StartActivity(intent);
+            };
 
             // create thread for making new tasks
             var taskList = new TaskList();
