@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+  <string name="ApplicationName">iWaitress</string>
+  <string name="MyTasks">My\ntasks</string>
+  <string name="AllTasks">All\ntasks</string>
+  <string name="tables">Map</string>
+  <string name="archive">Done</string>
+</resources>
